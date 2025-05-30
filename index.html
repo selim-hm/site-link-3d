@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3D Background & Custom Cursor</title>
+
+  <!-- ImportMap for Three.js -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.176.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.176.0/examples/jsm/"
+      }
+    }
+  </script>
+  <!--#cursor
+  #cursorPt
+  #target انا زرار-->
+
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Custom Cursor Elements -->
+  <div id="cursor"></div>
+  <div id="cursorPt"></div>
+
+  <!-- Interactive Element (hover target) -->
+  <a id="target" href="https://portfolio-selims-projects-c65def77.vercel.app/#">portfolio</a>
+  <!-- Three.js Scene -->
+  <script type="module" src="main.js"></script>
+
+  <!-- GSAP Animation Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- Custom Cursor Script -->
+  <script src="cursor.js"></script>
+</body>
+</html>
