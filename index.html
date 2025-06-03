@@ -3,313 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Brief introduction | Mohamad Maher Salim</title>
+  <title>3D Background & Custom Cursor</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <!-- ربط ملف CSS الخارجي -->
-  <link rel="stylesheet" href="style.css">
+  <!-- ImportMap for Three.js -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.176.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.176.0/examples/jsm/"
+      }
+    }
+  </script>
+  <!--#cursor
+  #cursorPt
+  #target انا زرار-->
 
-  <style>
-    /* اترك الخلفية كما هي في CSS الخارجي بدون تعديل */
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding-top: 120px; /* توفير مساحة للهيدر */
-      color: #eee;
-      background-attachment: fixed; /* لو الخلفية متحركة أو ثابتة */
-    }
-
-    /* الهيدر ثابت في الأعلى */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(17, 17, 17, 0.6);
-      color: #f4f4f4;
-      padding: 15px 20px;
-      box-shadow: 0 2px 10px rgba(204, 5, 144, 0.5);
-      z-index: 1000;
-      text-align: center;
-      border-bottom: 2px solid #f007dc;
-    }
-
-    header h1 {
-      margin: 0;
-      font-weight: 500;
-      font-size: 1.9rem;
-    }
-
-    header h3 {
-      margin: 4px 0 0 0;
-      font-weight: 400;
-      color: #d4b0ff;
-      font-size: 1.2rem;
-    }
-
-    /* التنسيق للمحتوى الرئيسي */
-    main {
-      max-width: 900px;
-      margin: 0 auto 60px auto;
-      background: rgba(0, 0, 0, 0.35);
-      padding: 30px 25px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(204, 5, 144, 0.6);
-      line-height: 1.6;
-      color: #ddd;
-    }
-
-    main h2 {
-      color: #f007dc;
-      margin-top: 1.5rem;
-      margin-bottom: 1rem;
-      font-weight: 500;
-    }
-
-    main p {
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      color: #ccc;
-    }
-
-    /* روابط خارجية */
-    a {
-      color: #f007dc;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    a:hover {
-      color: #ffaaff;
-      text-decoration: underline;
-    }
-
-    /* مسافات بين الأقسام */
-    .scene, .popup, footer {
-      max-width: 900px;
-      margin: 30px auto;
-    }
-  </style>
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Custom Cursor Elements -->
+  <div id="cursor"></div>
+  <div id="cursorPt"></div>
 
-  <!-- الهيدر في أعلى الصفحة -->
-  <header>
-    <h1>Who is Engineer Mohamed Maher Salim?</h1>
-    <h3>Front-end development expert</h3>
-  </header>
-  <br>
-  <br>
-  <!-- قسم المحتوى الرئيسي -->
-  <main>
-    <h2>About Engineer Mohamed Maher Selim</h2>
-    <p>Engineer Mohamed Maher Salim is one of the prominent names in the field of developing the front facades, characterized by his deep passion for technology and the innovation of digital experiences that leave an impact on everyone who deals with them. With experience extending for several years, he was able to build a professional march full of successes and achievements in the world of programming and technology.</p>
-    <p>Since his beginnings, Mohamed has shown a clear passion for the design of user facades and the construction of high -quality web applications in terms of performance, gravity, and ease of use. I specialize in the FROND Development field and focus on mastery of tools and technologies that constitute the essence of the modern user experience such as:</p>
-    <p>🔹 html5 / css3 / javascript ES6+</p>
-    <p>🔹 React.js / vue.js / next.js</p>
-    <p>🔹 TAILWIND CSS / BOOTSTAP</p>
-    <p>🔹 Git / github / ci-car</p>
-    <p>🔹 Integration with APIS and deal with RESTFUL and Graphql</p>
-    <p>🔹 Improving performance, SEO and user experience (UX/UI)</p>
+  <!-- Interactive Element (hover target) -->
+  <a id="target" href="https://portfolio-selims-projects-c65def77.vercel.app/#">portfolio</a>
+  <!-- Three.js Scene -->
+  <script type="module" src="main.js"></script>
 
-    <h2>Professional experience and distinguished projects</h2>
-    <p>During his professional journey, Mohamed participated in developing many successful digital projects that serve various sectors, from e -commerce, to health services, to educational and administrative systems. He worked with international teams, and contributed to:</p>
-    <p>✅ Design and develop professional front facades for electronic sites and responsive applications</p>
-    <p>✅ Figma / Adobe XD to real web pages compatible with all devices</p>
-    <p>✅ Improving the general performance of sites and reducing the download time using advanced technologies</p>
-    <p>✅ Building flexible and smooth development environments that work efficiently within the Agile/Scrum teams</p>
-    <p>✅ Training and directing new developers and sharing technical knowledge through developers societies</p>
+  <!-- GSAP Animation Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-    <h2>What distinguishes Muhammad 🌟</h2>
-    <p>What distinguishes Muhammad is not his technical experience, but also:</p>
-    <p>✨ The Spirit of Creativity: Always seeks to provide innovative and unique solutions</p>
-    <p>✨ Attention to details: Every line of code in his book must be carefully calculated</p>
-    <p>✨ Love of Learning: A permanent follower of the latest web trends and techniques</p>
-    <p>✨ Collective action: cooperating with the team and believes in the strength of the participatory work</p>
-    <p>✨ Effective communication: You know explaining technical matters in a simple and clear language</p>
-
-    <h2>A word from Muhammad 💬</h2>
-    <p>"Programming for me is not just a job ... it is an art, it is a tool for building the future. I love to see your idea and it turns into a real product between the hands of users, and this is what I am always aspiring to the best."</p>
-
-    <h2>Contact Muhammad</h2>
-    <p>If you are a project owner, a company, or even an idea that you want to start, you can communicate with Muhammad and see how it can transform your idea into an amazing digital reality! 🌐💡</p>
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mojamedmaher55@gmail.com" target="_blank">📧 Email: mojamedmaher55@gmail.com</a><br>
-    <a href="https://github.com/selim-hm" target="_blank">🔗 Github: [GitHub.com/selim-hm]</a><br>
-    <a href="https://www.linkedin.com/in/mohamed-selim-31a118331?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">🔗 LinkedIn: [linkin.com/in/mohamed selim]</a><br>
-    <a href="https://portfolio-selims-projects-c65def77.vercel.app/#" target="_blank">🌍 Personal website: [www.portfolio.com]</a>
-  </main>
-
-   <!-- مشهد الكاروسيل (3D Carousel) -->
-  <div class="scene">
-    <div class="carousel" id="carousel">
-      <div class="card" id="card1" data-id="card1">
-        <img src="https://iili.io/3QhqLmP.jpg" alt="About">
-        <h3>About</h3>
-      </div>
-      <div class="card" id="card2" data-id="card2">
-        <img src="https://iili.io/3Qhqi7V.jpg" alt="Services">
-        <h3>Services</h3>
-      </div>
-      <div class="card" id="card3" data-id="card3">
-        <img src="https://iili.io/3QhqskB.jpg" alt="Projects">
-        <h3>Projects</h3>
-      </div>
-      <div class="card" id="card4" data-id="card4">
-        <img src="https://iili.io/3QhqthF.jpg" alt="Work">
-        <h3>Work</h3>
-      </div>
-      <div class="card" id="card5" data-id="card5">
-        <img src="https://iili.io/3Qhqyrv.jpg" alt="Contact">
-        <h3>Contact</h3>
-      </div>
-    </div>
-  </div>
-<br>
-<br>
-<br>
-  <!-- النوافذ المنبثقة (Popups) -->
-  <div id="popup-card1" class="popup">
-    <div class="about-inner">
-      <h2>About</h2>
-      <div class="about-flex">
-        <div class="about-left">
-          <img src="img/project.jpg" alt="About">
-        </div>
-        <div class="about-right">
-         I am Mohamed Maher Salim, a software engineer specializing in front-end. 
-         I work on developing projects for several amazing projects and technical dealings.
-        </div>
-      </div>
-    </div>
-    <button class="popup-close" onclick="closePopup()">Close</button>
-  </div>
-
-  <div id="popup-card2" class="popup">
-    <h2>Services</h2>
-    <div class="services"></div>
-    <div class="services-content">
-      <ul class="groene-vinkjes">
-        <li>website/App development</li>
-        <li>eCommerce services</li>
-        <li>SEO optimalisation</li>
-        <li>Social media and e-marketing services</li>
-      </ul>
-    </div>
-    <button class="popup-close" onclick="closePopup()">Close</button>
-  </div>
-
-  <div id="popup-card3" class="popup">
-    <h2>Projects</h2>
-    <h4> That Creative Company</h4>
-    <div class="projects">
-      <div>
-        <img class="pro" src="img/project-3.jpg" alt="Projects">
-        <ul>
-          <li>Project: Website</li>
-          <!--<li>Subject: Private Software Startup</li>-->
-          <!--<li>Name: That Creative Company</li>-->
-        </ul>
-        <p>
-          <a href="https://my-company-seven.vercel.app/">https://my-company-.com/</a><br>
-          <!--<a href="#">Google Play Store</a><br>
-          <a href="#">Apple Store</a>-->
-        </p>
-      </div>
-      <p class="link"><a href="https://portfolio-selims-projects-c65def77.vercel.app/#">more projects &gt;&gt;</a></p>
-    </div>
-    <button class="popup-close" onclick="closePopup()">Close</button>
-  </div>
-
-  <div id="popup-card4" class="popup">
-    <h2>Top Projects</h2>
-
-    <div class="work e-commerce">
-      <p><strong>SHOPLANE</strong> An e-commerce website for selling fashion products</p>
-    </div>
-
-    <div class="work business">
-      <p><strong>That Creative Company</strong> A startup software company specializing in all aspects of programming</p>
-    </div>
-
-    <div class="work profile">
-      <p><strong>site-link</strong> A website introducing Engineer Mohamed Selim, featuring custom designs to direct users to his profile</p>
-    </div>
-
-    <!--<div class="work fitness">
-      <p><strong>Fit</strong> is a website that provides access to a wide range of fitness resources.</p>
-    </div>-->
-
-    <button class="popup-close" onclick="closePopup()">Close</button>
-  </div>
-
-  <div id="popup-card5" class="popup">
-  <h2>Contact</h2>
-  <h4 class="touch">Get in touch with us</h4>
-
-  <form id="contact-form" action="https://formsubmit.co/iphoneselim22@gmail.com" method="POST">
-    <!-- To prevent CAPTCHA and redirect to same page -->
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="">
-
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required><br><br>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
-
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" required></textarea><br><br>
-
-    <input type="submit" value="Send">
-  </form>
-
-  <p id="form-message" style="color: lightgreen; display: none;">Message sent successfully!</p>
-  <button class="popup-close" onclick="closePopup()">Close</button>
-</div>
-
-
-  <!-- النوافذ المنبثقة (Popups) -->
-  <!-- يبقى نفس شيء لم أغير شيء في النوافذ -->
-  <!-- ... (باقي كود النوافذ كما هو) -->
-
-  <!-- ربط ملف JavaScript الخارجي -->
-  <script src="script.js"></script>
-
-  <footer>
-    <br>
-    <a href="https://portfolio-selims-projects-c65def77.vercel.app/#" class="btn-effect-1">Portfolio</a>
-    <p>© 2025 Engineer Mohamed Maher Selim. All rights reserved.</p>
-  </footer>
-
-  <style>
-    footer {
-      margin-top: 30px;
-      text-align: center;
-      padding: 20px 0;
-      color: #ccc;
-    }
-    .btn-effect-1 {
-      display: block;
-      margin: 0 auto 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      color: #f007dc;
-      text-decoration: none;
-      border: 2px solid #f007dc;
-      border-radius: 5px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    .btn-effect-1:hover {
-      background-color: #f007dc;
-      color: #fff;
-    }
-    footer p {
-      margin: 0;
-      font-size: 14px;
-    }
-  </style>
-
+  <!-- Custom Cursor Script -->
+  <script src="cursor.js"></script>
 </body>
 </html>
